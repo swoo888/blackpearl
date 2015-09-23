@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+{% load compress i18n %}
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    {% block metadata %}
+        <meta name="description" content="{% block meta_description %}Blackpearl Enterprise{% endblock %}"/>
+        <meta name="keywords" content="{% block meta_keywords %}Review Honeset Accurate{% endblock %}"/>
+        <meta name="Rating" content="pg13">
+        {#    <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA" />#}
+        <title>{% block title %}Blackpearl Enterprise{% endblock %}</title>
+    {% endblock %}
+
+    {% compress css %}
+        {#        all js, css inside this block will be compressed into a file in CACHE folder in static#}
+        {#    <link media="all" rel="stylesheet" href="{{COMPRESS_URL}}css/jquery.ui.resizable.css" type="text/css"/>#}
+        <link rel="stylesheet" href="{{ COMPRESS_URL }}css/bootstrap.css" type="text/css" charset="utf-8">
+        {% block extracss %}
+        {% endblock %}
+    {% endcompress %}
+</head>
+
+<body>
+{% block header %}
+{% endblock %}
+{% block body %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+</body>
+
+{% compress js %}
+    <script src="{{ COMPRESS_URL }}js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ COMPRESS_URL }}js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    {% block page_javascript %}
+    {% endblock %}
+{% endcompress %}
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="row">
+        <div class="span8">
+            If there are nested namespaces, these steps are repeated for each part of the
+            namespace until only the view name is unresolved. The view name will then be resolved into a
+            URL in the namespace that has been found. Example To show this resolution strategy in action,
+            consider an example of two instances of the polls application from the tutorial:
+            one called 'author-polls' and one called 'publisher-polls'. Assume we have enhanced that
+            application so that it takes the instance namespace into consideration when creating and
+            displaying polls.
+        </div>
+        <div class="span4">A common need when working on a Django project is the possibility to obtain URLs in their
+            final forms either for embedding in generated content (views and assets URLs, URLs shown to the user, etc.)
+            or for handling of the navigation flow on the server side (redirections, etc.)
+        </div>
+    </div>
+{% endblock %}
